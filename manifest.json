@@ -1,0 +1,15 @@
+{
+  "name": "HB Mobile Avanzato",
+  "short_name": "HB Mobile",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#1e1e1e",
+  "theme_color": "#333333",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/D20_icon.svg/512px-D20_icon.svg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
