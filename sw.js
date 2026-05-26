@@ -1,9 +1,9 @@
 self.addEventListener('install', (e) => {
     e.waitUntil(
-        caches.open('hb-store').then((cache) => cache.addAll([
-            '/index.html',
-            '/style.css',
-            '/script.js'
+        caches.open('hb-store-v2').then((cache) => cache.addAll([
+            './index.html',
+            './style.css',
+            './script.js'
         ]))
     );
 });
