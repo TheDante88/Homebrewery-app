@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- IMPOSTAZIONI GOOGLE DRIVE API ---
   // IMPORTANTE: Per far funzionare l'accesso ai file originali di Homebrewery, 
   // devi creare un progetto su console.cloud.google.com e incollare qui il tuo Client ID.
-  const GOOGLE_CLIENT_ID = 'INSERISCI_QUI_IL_TUO_CLIENT_ID.apps.googleusercontent.com';
+  const GOOGLE_CLIENT_ID = '378200277078-edff4nvc1d28i4d2erapckr28tp62lld.apps.googleusercontent.com.apps.googleusercontent.com';
   let tokenClient;
   let gapiInited = false;
   let gisInited = false;
