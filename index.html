@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>HB Mobile Avanzato</title>
+  <title>HB Mobile - Master Edition</title>
   
   <link rel="manifest" href="manifest.json">
   <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
@@ -15,10 +15,10 @@
 
   <header class="top-bar">
     <button id="btnStyles">Colori & Stile</button>
-    <button id="btnExport">Esporta TXT</button>
-    <label class="custom-file-upload">
+    <button id="btnExport" class="action-btn">Esporta per Sito</button>
+    <label class="custom-file-upload action-btn">
       <input type="file" id="btnImport" accept=".txt,.md">
-      Importa
+      Importa da Sito
     </label>
     <button id="btnToggle" class="primary">Vedi Anteprima</button>
   </header>
@@ -34,6 +34,46 @@
       <div class="toolbar-divider">Testo</div>
       <button class="snippet-btn" data-insert="**Testo**" data-cursor="-6">Grassetto (**)</button>
       <button class="snippet-btn" data-insert="<b>Testo</b>" data-cursor="-6">Grassetto Tab (b)</button>
+      <button class="snippet-btn" data-insert="*Testo*" data-cursor="-6">Corsivo</button>
+      <button class="snippet-btn" data-insert="\\n# Titolo 1\\n">H1</button>
+      <button class="snippet-btn" data-insert="\\n## Titolo 2\\n">H2</button>
+      <button class="snippet-btn" data-insert="\\n### Titolo 3\\n">H3</button>
+      
+      <div class="toolbar-divider">Struttura V3</div>
+      <button class="snippet-btn" data-insert="\\n\\page\\n\\n">Nuova Pagina</button>
+      <button class="snippet-btn" data-insert="\\n\\column\\n\\n">Colonna</button>
+      <button class="snippet-btn" data-insert="\\n{{wide\\n\\n}}\\n" data-cursor="-4">Wide</button>
+      <button class="snippet-btn" data-insert="\\n{{pageNumber,auto}}\\n">Num Pagina</button>
+      <button class="snippet-btn" data-insert="\\n{{footnote Manuale | Capitolo}}\\n">Footnote</button>
+
+      <div class="toolbar-divider">Box & Tabelle</div>
+      <button class="snippet-btn custom-box" data-insert="\\n<div class='quote-box'>\\n&quot;<b>Citazione qui.</b>&quot;\\n<br>— <b>Autore</b>\\n</div>\\n\\n">Quote Box</button>
+      <button class="snippet-btn custom-box" data-insert="\\n<div class='lore-box'>\\n<b>Titolo Segreto</b>\\nTesto della lore qui...\\n</div>\\n\\n">Lore Box</button>
+      <button class="snippet-btn custom-box" data-insert="\\n<table class='history-table'>\\n<thead>\\n  <tr><th><b>Titolo 1</b></th><th><b>Titolo 2</b></th></tr>\\n</thead>\\n<tbody>\\n  <tr><td>Dato 1</td><td>Dato 2</td></tr>\\n</tbody>\\n</table>\\n\\n">Tab Storica</button>
+      <button class="snippet-btn custom-box" data-insert="\\n<table class='d-table gold-th'>\\n<tr><th><b>d6</b></th><th><b>Ideale</b></th></tr>\\n<tr><td>1</td><td>Esempio</td></tr>\\n</table>\\n\\n">Tab Dadi</button>
+    </div>
+  </footer>
+
+  <div id="styleModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Stile CSS Avventura</h3>
+      <textarea id="styleEditor" placeholder="Inserisci il tuo CSS..."></textarea>
+      <div style="display:flex; gap:10px; margin-top:10px;">
+        <button id="saveStyles" class="primary">Applica e Salva</button>
+        <button id="closeStyles">Chiudi</button>
+      </div>
+    </div>
+  </div>
+
+  <style id="customAdventureStyles"></style>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+  </script>
+</body>
+</html>
       <button class="snippet-btn" data-insert="*Testo*" data-cursor="-6">Corsivo</button>
       <button class="snippet-btn" data-insert="\n# Titolo 1\n">H1</button>
       <button class="snippet-btn" data-insert="\n## Titolo 2\n">H2</button>
